@@ -1,0 +1,13 @@
+AdaFace IR-50 (WebFace4M) - ONNX
+Sumber bobot: mk-minchul/AdaFace, adaface_ir50_webface4m.ckpt
+
+INPUT  'input'     float32 [N,3,112,112]  NCHW
+       wajah ter-align 112x112 (template 5 titik ArcFace, align.py), kanal BGR (bukan RGB!)
+       nilai = (piksel/255 - 0.5) / 0.5
+OUTPUT 'embedding' float32 [N,512]  sudah dinormalisasi L2
+       'norm'      float32 [N,1]    norma fitur (kualitas wajah), opsional
+
+Agar skor sama dengan sistem:
+  emb = embedding(wajah) + embedding(flip horizontal wajah); emb = emb / ||emb||
+  template pengguna = rata-rata emb foto pendaftaran, dinormalisasi L2
+  skor = dot(emb, template);  accept >= 0.55, review >= 0.40 (config.py), wajah < 28 px tidak dikenali

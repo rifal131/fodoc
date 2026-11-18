@@ -1,0 +1,116 @@
+{
+  "nama_model": "YOLOv11n-face",
+  "skenario": "S3",
+  "keterangan_skenario": "Fine-tune data asli | uji citra asli",
+  "pakai_restorasi": false,
+  "ambang_confidence": 0.3418,
+  "ambang_aplikasi": 0.4639,
+  "ambang_pakai": 0.4639,
+  "saringan": {
+    "aktif": true,
+    "min_sisi": 0,
+    "rasio_min": 0,
+    "rasio_maks": 0,
+    "tumpang_dalam": 0.7
+  },
+  "min_piksel_recognition": 112,
+  "imgsz_uji": 1088,
+  "setelan_training": {
+    "epochs": 40,
+    "imgsz": 1088,
+    "batch": 8
+  },
+  "precision": 0.923963133640553,
+  "recall": 0.7652671755725191,
+  "f1": 0.837160751565762,
+  "ap50": 0.832625672379276,
+  "kinerja_dataset_kampus": {
+    "foto_uji": 21,
+    "wajah_uji": 124,
+    "ambang_f1": {
+      "ambang": 0.3418,
+      "precision": 0.984,
+      "recall": 0.9919,
+      "f1": 0.988,
+      "bingkai_salah": 2
+    },
+    "ambang_aplikasi": {
+      "ambang": 0.4639,
+      "precision": 0.9919,
+      "recall": 0.9919,
+      "f1": 0.9919,
+      "bingkai_salah": 1
+    }
+  },
+  "onnx": {
+    "deteksi": {
+      "file": "deteksi_wajah.onnx",
+      "imgsz": 1088,
+      "input": {
+        "images": [
+          1,
+          3,
+          1088,
+          1088
+        ]
+      },
+      "output": {
+        "output0": [
+          1,
+          5,
+          24276
+        ]
+      }
+    },
+    "landmark": {
+      "file": "landmark_wajah.onnx",
+      "imgsz": 320,
+      "input": {
+        "images": [
+          1,
+          3,
+          320,
+          320
+        ]
+      },
+      "output": {
+        "output0": [
+          1,
+          20,
+          2100
+        ]
+      }
+    }
+  },
+  "restorasi": {
+    "method": "adaptif",
+    "config": {
+      "method": "adaptif",
+      "dark_threshold": 0.3,
+      "bright_threshold": 0.65,
+      "contrast_threshold": 0.12,
+      "range_threshold": 0.4,
+      "target_dark": 0.4,
+      "target_bright": 0.55,
+      "gamma_limits": [
+        0.2,
+        3.0
+      ],
+      "gamma_toe": 0.015,
+      "denoise": "auto",
+      "denoise_gamma": 0.7,
+      "denoise_noise": 4.0,
+      "denoise_strength": 0.8,
+      "denoise_h_limits": [
+        3.0,
+        12.0
+      ],
+      "clahe_target_std": 0.2,
+      "clahe_floor_std": 0.06,
+      "clahe_clip_min": 1.0,
+      "clahe_clip_max": 3.0,
+      "clahe_tiles": 8,
+      "chroma_gain_max": 1.6
+    }
+  }
+}

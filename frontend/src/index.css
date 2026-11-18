@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --paper: #F5F5F2;
+  --paper-card: #FCFCFA;
+  --paper-soft: #FBFBF8;
+  --ink: #171717;
+  --ink-secondary: #6E6D6A;
+  --ink-faint: #8F8E8B;
+  --hairline: rgba(0, 0, 0, 0.08);
+}
+
+html,
+body,
+#root {
+  background-color: #F5F5F2;
+  color: #171717;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Prevent mobile Safari auto-zoom on form controls and ensure smooth tap response */
+@media (max-width: 640px) {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+.font-serif-brand {
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  :root {
+    --background: 60 11% 95%;
+    --foreground: 0 0% 9%;
+    --card: 60 20% 99%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 8% 92%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 60 8% 92%;
+    --muted-foreground: 45 2% 42%;
+    --accent: 60 8% 91%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 60 5% 88%;
+    --input: 60 5% 84%;
+    --ring: 0 0% 15%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  body {
+    background-color: #F5F5F2;
+    color: #171717;
+  }
+}
+
+/* Cofounder.co Tactile Glossy Charcoal CTA Button */
+.cta-btn-dark {
+  background: linear-gradient(180deg, #3D3D3D 0%, #242424 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-weight: 500;
+  transition: filter 160ms ease, transform 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms ease;
+}
+.cta-btn-dark:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.cta-btn-dark:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+/* Cofounder.co Crisp White Paper Secondary Button */
+.cta-btn-light {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  color: #171717;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+.cta-btn-light:hover:not(:disabled) {
+  background: #FBFBF8;
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+/* Cofounder.co Subtle Grid Background (Footer & Highlight Zones) */
+.cofounder-grid-bg {
+  background-color: #F5F5F2;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.032) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.032) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Cofounder.co Frosted Frame (tanpa 3D rotate agar tombol di dalam selalu responsif saat diklik) */
+.cofounder-holo-card {
+  background: rgba(251, 251, 248, 0.88);
+  box-shadow:
+    0 0 0.357px 1.5px rgba(255, 255, 255, 0.4) inset,
+    0 2px 0 0 #FFFFFF inset,
+    0 2px 12px rgba(0, 0, 0, 0.08),
+    0 0 0 4px rgba(232, 231, 230, 0.45);
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease;
+}
+.cofounder-holo-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0.357px 1.5px rgba(255, 255, 255, 0.5) inset,
+    0 2px 0 0 #FFFFFF inset,
+    0 14px 30px rgba(0, 0, 0, 0.11),
+    0 0 0 4px rgba(232, 231, 230, 0.55);
+}
+
+/* Clean editorial inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #FFFFFF;
+  color: #171717;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #171717;
+  box-shadow: 0 0 0 3px rgba(23, 23, 23, 0.08);
+}

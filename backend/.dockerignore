@@ -1,0 +1,11 @@
+myenv/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+storage_data/
+*.log
+.pytest_cache/
+ml_services/face_detection/deteksi_wajah.pt
