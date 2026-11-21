@@ -6,15 +6,13 @@ const isLocalDev3000 =
   window.location.port === "3000" &&
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 
-const ENV_BACKEND_URL = (process.env.REACT_APP_BACKEND_URL || "").trim().replace(/\/+$/, "");
+const ENV_BACKEND_URL = (
+  process.env.REACT_APP_BACKEND_URL || "https://novel-agree-specialty-regulatory.trycloudflare.com"
+).trim().replace(/\/+$/, "");
 
-const BACKEND_URL = ENV_BACKEND_URL
-  ? ENV_BACKEND_URL
-  : isLocalDev3000
+const BACKEND_URL = isLocalDev3000
   ? "http://localhost:8000"
-  : isBrowser && window.location.port === "3000"
-  ? `${window.location.protocol}//${window.location.hostname}:8000`
-  : "";
+  : ENV_BACKEND_URL || "https://novel-agree-specialty-regulatory.trycloudflare.com";
 
 export const API_BASE = `${BACKEND_URL}/api`;
 export const UPLOADS_BASE = `${BACKEND_URL}`;
