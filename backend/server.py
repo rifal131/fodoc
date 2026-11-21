@@ -2024,7 +2024,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
     allow_origins=[] if _cors_is_wildcard else _raw_cors,
-    allow_origin_regex=r"https://.*\.vercel\.app|https://.*\.devtunnels\.ms|http://localhost(:\d+)?|http://127\.0\.0\.1(:\d+)?" if _cors_is_wildcard else None,
+    allow_origin_regex=r"https?://.*" if _cors_is_wildcard else None,
     allow_methods=["*"],
     allow_headers=["*"],
 )
