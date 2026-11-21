@@ -211,10 +211,6 @@ export default function Navbar() {
                       Admin Panel
                     </NavLink>
                     <span className={sepClass}>|</span>
-                    <NavLink to="/verification" className={linkClass} data-testid="nav-verification">
-                      Antrean Verifikasi
-                    </NavLink>
-                    <span className={sepClass}>|</span>
                     <NavLink to="/events" className={linkClass} data-testid="nav-events">
                       Kelola Acara
                     </NavLink>
@@ -404,9 +400,6 @@ export default function Navbar() {
                 <>
                   <NavLink to="/admin" onClick={() => setMobileOpen(false)} className={mobileLinkClass}>
                     Admin Panel
-                  </NavLink>
-                  <NavLink to="/verification" onClick={() => setMobileOpen(false)} className={mobileLinkClass}>
-                    Antrean Verifikasi
                   </NavLink>
                   <NavLink to="/events" onClick={() => setMobileOpen(false)} className={mobileLinkClass}>
                     Kelola Acara

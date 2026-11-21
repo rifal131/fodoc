@@ -46,7 +46,7 @@ export default function App() {
               <Route path="/notifications" element={<Protected roles={["mahasiswa"]}><Notifications /></Protected>} />
 
               <Route path="/panitia" element={<Protected roles={["panitia", "admin"]}><PanitiaDashboard /></Protected>} />
-              <Route path="/verification" element={<Protected roles={["mahasiswa", "admin"]}><VerificationQueue /></Protected>} />
+              <Route path="/verification" element={<Protected roles={["mahasiswa"]}><VerificationQueue /></Protected>} />
               <Route path="/events" element={<Protected roles={["mahasiswa", "panitia", "admin"]}><Events /></Protected>} />
               <Route path="/events/:id" element={<Protected roles={["mahasiswa", "panitia", "admin"]}><EventDetail /></Protected>} />
 
