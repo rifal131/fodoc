@@ -91,3 +91,6 @@ memory/test_credentials.md
 android-sdk/
 
 backend/ml_services/models/best_feature_extractor.pth
+
+temp_pddikti/
+
