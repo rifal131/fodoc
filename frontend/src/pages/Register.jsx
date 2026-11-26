@@ -259,9 +259,9 @@ export default function Register() {
       <div className="w-full max-w-[460px]">
         <div className="mb-5 sm:mb-6 flex flex-col items-center text-center">
           <img
-            src="/images/fodoc-logo.png"
-            alt="FODOC Foto Dokumentasi"
-            className="h-16 sm:h-20 w-auto object-contain mb-3"
+            src="/images/fodoc-logo-full.png"
+            alt="FODOC Foto Dokumentasi Kampus"
+            className="h-12 sm:h-14 w-auto object-contain mb-3"
           />
           <h1 className="text-[26px] sm:text-[30px] font-normal leading-[1.15] tracking-[-0.025em] text-[#171717]">
             Daftar Akun Baru

@@ -101,18 +101,12 @@ export default function Footer() {
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 items-center">
           {/* Left Editorial Column */}
           <div className="lg:col-span-7 space-y-5 sm:space-y-7">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <img
-                src="/images/fodoc-logo.png"
-                alt="FODOC Foto Dokumentasi"
+                src="/images/fodoc-logo-full.png"
+                alt="FODOC Foto Dokumentasi Kampus"
                 className="h-10 sm:h-12 w-auto object-contain"
               />
-              <div>
-                <div className="font-serif-brand text-[20px] sm:text-[22px] leading-none text-[#171717]">FODOC</div>
-                <div className="font-mono text-[10px] sm:text-[10.5px] uppercase tracking-[0.14em] text-[#8F8E8B] mt-1">
-                  Foto Dokumentasi
-                </div>
-              </div>
             </div>
 
             <h2 className="text-[26px] sm:text-[40px] font-normal leading-[1.15] sm:leading-[1.12] tracking-[-0.025em]">

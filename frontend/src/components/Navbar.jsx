@@ -64,34 +64,22 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-[1180px] mx-auto px-4 sm:px-8 h-[64px] sm:h-[72px] flex items-center justify-between gap-2 sm:gap-4">
-        {/* FODOC — Foto Dokumentasi Logo */}
+        {/* FODOC — Foto Dokumentasi Kampus Logo */}
         <Link
           to="/"
           data-testid="brand-link"
           onClick={() => setMobileOpen(false)}
-          className="flex items-center gap-2 sm:gap-2.5 group shrink-0 min-w-0"
+          className={`flex items-center group shrink-0 min-w-0 transition-all ${
+            isHeroOverlay
+              ? "bg-white/95 backdrop-blur-sm px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-sm"
+              : ""
+          }`}
         >
           <img
-            src="/images/fodoc-logo.png"
-            alt="FODOC Foto Dokumentasi"
-            className="h-8 sm:h-10 w-auto object-contain drop-shadow-[0_1px_4px_rgba(0,0,0,0.2)] group-hover:scale-105 transition-transform shrink-0"
+            src="/images/fodoc-logo-full.png"
+            alt="FODOC Foto Dokumentasi Kampus"
+            className="h-8 sm:h-10 w-auto object-contain group-hover:scale-[1.03] transition-transform shrink-0"
           />
-          <span className="leading-none">
-            <span
-              className={`block font-serif-brand text-[20px] sm:text-[24px] tracking-[-0.02em] transition-colors ${
-                isHeroOverlay ? "text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.28)]" : "text-[#171717]"
-              }`}
-            >
-              FODOC
-            </span>
-            <span
-              className={`block font-mono text-[8.5px] sm:text-[9.5px] uppercase tracking-[0.12em] sm:tracking-[0.14em] mt-0.5 ${
-                isHeroOverlay ? "text-white/85" : "text-[#8F8E8B]"
-              }`}
-            >
-              Foto Dokumentasi
-            </span>
-          </span>
         </Link>
 
         {/* Right Desktop Navigation + CTA */}
