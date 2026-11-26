@@ -7,12 +7,12 @@ const isLocalDev3000 =
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 
 const ENV_BACKEND_URL = (
-  process.env.REACT_APP_BACKEND_URL || "https://symposium-wendy-april-schema.trycloudflare.com"
+  process.env.REACT_APP_BACKEND_URL || "https://thompson-enlarge-ferrari-rest.trycloudflare.com"
 ).trim().replace(/\/+$/, "");
 
 const BACKEND_URL = isLocalDev3000
   ? "http://localhost:8000"
-  : ENV_BACKEND_URL || "https://symposium-wendy-april-schema.trycloudflare.com";
+  : ENV_BACKEND_URL || "https://thompson-enlarge-ferrari-rest.trycloudflare.com";
 
 export const API_BASE = `${BACKEND_URL}/api`;
 export const UPLOADS_BASE = `${BACKEND_URL}`;
